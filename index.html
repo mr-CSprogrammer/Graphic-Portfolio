@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/index.css" />
+
+
+</head>
+<body>
+
+
+  <h1 dataReveal style="animation-delay:100ms">
+    Portfolio (Graphic design / Floorplans)
+  </h1>
+
+  <section class="wrap puzzleGrid">
+
+    <figure class="projectHomeFloor" dataReveal style="animation-delay:200ms">
+
+      <img
+        src="img/firstFloorCornerTownHome.png"
+        alt="Home Floorplan Design"
+      />
+      <figcaption>Home Floorplan Design</figcaption>
+
+    </figure>
+
+
+
+    <figure class="projectSinbad" dataReveal style="animation-delay:300ms">
+
+      <img
+        src="img/SinbadRestaurantBillBoard.png"
+        alt="Sinbad Restaurant Billboard Design"
+      />
+      <figcaption>Sinbad Restaurant Billboard Design</figcaption>
+
+    </figure>
+
+
+    <figure class="projectLogo" dataReveal style="animation-delay:400ms">
+
+      <img
+        src="img/ShawarmaLogoDesign.png"
+        alt="Shawarma Logo Design Concept"
+      />
+      <figcaption>Shawarma Logo Design Concept</figcaption>
+
+    </figure>
+
+
+
+    <figure class="projectTeamCanada" dataReveal style="animation-delay:500ms">
+
+      <img
+        src="img/TeamCanadaBillBoard.png"
+        alt="Team Canada Billboard Design"
+      />
+      <figcaption>Team Canada Billboard Design</figcaption>
+
+
+    </figure>
+
+
+
+    <figure class="projectWestern" dataReveal style="animation-delay:600ms">
+
+      <img
+        src="img/WesternClothingBillboard.png"
+        alt="Western University Clothing Billboard Design"
+      />
+      <figcaption>
+        Western University Clothing Billboard Design
+      </figcaption>
+
+
+    </figure>
+
+
+    <figure class="projectSecondHome" dataReveal style="animation-delay:700ms">
+
+      <img
+        src="img/secondFloorWideHouse.png"
+        alt="Second Home Floorplan Design"
+      />
+      <figcaption>Second Home Floorplan Design</figcaption>
+    </figure>
+
+  </section>
+
+  <div id="lightbox" aria-hidden="true">
+    <img
+      id="lightboxImg"
+      src=""
+      alt="Expanded project image"
+    />
+  </div>
+
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () =>
+
+    {
+      document.querySelectorAll('[dataReveal]').forEach((element, index) =>
+      {
+        if (!element.style.animationDelay)
+        {
+          element.style.animationDelay = `${index * 120 + 150}ms`;
+        }
+      });
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const gridImages = document.querySelectorAll('.puzzleGrid img');
+
+      
+      gridImages.forEach(img =>
+      {
+        img.addEventListener('click', () =>
+        {
+          lightboxImg.src = img.src;
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+
+      const closeLightbox = () =>
+      {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+      };
+
+
+      lightbox.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', event =>
+      {
+        if (event.key === 'Escape' && lightbox.classList.contains('open'))
+        {
+          closeLightbox();
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
