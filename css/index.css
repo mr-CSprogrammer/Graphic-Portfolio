@@ -39,45 +39,6 @@ h1 {
 }
 
 
-.projectHomeFloor {
-  grid-column: 1;
-  grid-row: 1/span 2;
-}
-
-
-
-.projectLexus {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-
-.projectNike {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-
-.projectTeamCanada
-{
-  grid-column: 4;
-  grid-row: 1;
-}
-
-
-.projectWestern {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-
-.projectSecondHome {
-  grid-column: 3/span 2;
-  grid-row: 2;
-}
-
-
-
 figure {
   position: relative;
   overflow: hidden;
